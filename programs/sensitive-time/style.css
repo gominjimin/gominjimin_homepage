@@ -528,6 +528,10 @@ ul {
 }
 
 /* Responsive */
+.br-desktop {
+  display: inline;
+}
+
 .br-mobile {
   display: none;
 }
@@ -567,6 +571,10 @@ ul {
 
   .br-mobile {
     display: inline;
+  }
+
+  .br-desktop {
+    display: none;
   }
 }
 
