@@ -427,6 +427,32 @@ ul {
   font-size: 0.98rem;
 }
 
+/* Review cards */
+.review-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.review-card__stars {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+}
+
+.review-card__text {
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  color: var(--color-text);
+}
+
+.review-card__author {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
 /* CTA */
 .section--cta {
   background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
