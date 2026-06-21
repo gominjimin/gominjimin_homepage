@@ -74,6 +74,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   height: 72px;
+  gap: 12px;
 }
 
 .logo {
@@ -83,6 +84,10 @@ ul {
   letter-spacing: -0.02em;
   color: #f0efeb;
   transition: color 0.3s ease;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .header--scrolled .logo {
@@ -96,9 +101,10 @@ ul {
   font-size: 0.82rem;
   color: rgba(240, 239, 235, 0.8);
   transition: color 0.3s ease;
+  flex-shrink: 0;
 }
 
-.nav a:not(.nav__cta) {
+.nav a:not(.nav__cta):not(.nav__home) {
   display: none;
 }
 
@@ -113,13 +119,14 @@ ul {
 .nav__home {
   opacity: 0.75;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .nav__cta {
   background-color: var(--color-primary);
   color: #fff !important;
   padding: 8px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   font-weight: 500;
 }
 
@@ -145,9 +152,11 @@ ul {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
+  background-image:
     linear-gradient(180deg, rgba(15, 14, 12, 0.45) 0%, rgba(15, 14, 12, 0.78) 100%),
-    radial-gradient(circle at 25% 25%, #4a4a48 0%, #262625 55%, #121212 100%);
+    var(--hero-bg-image, radial-gradient(circle at 25% 25%, #4a4a48 0%, #262625 55%, #121212 100%));
+  background-size: cover;
+  background-position: center 25%;
 }
 
 .hero__bg::after {
@@ -242,7 +251,7 @@ ul {
 .btn {
   display: inline-block;
   padding: 16px 38px;
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 1rem;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -274,6 +283,10 @@ ul {
 .btn--block {
   width: 100%;
   text-align: center;
+}
+
+.btn--apply {
+  border-radius: 999px;
 }
 
 /* Sections */
@@ -318,6 +331,79 @@ ul {
   margin-top: 50px;
 }
 
+/* 회복 여정 타임라인 */
+.journey {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.journey::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background-color: rgba(43, 43, 41, 0.12);
+  z-index: 0;
+}
+
+.journey__item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.journey__num {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gowun Batang', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.journey__item:nth-child(2) .journey__num {
+  background-color: rgba(124, 138, 150, 0.3);
+  color: var(--color-primary-dark);
+}
+
+.journey__item:nth-child(3) .journey__num {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-light);
+}
+
+.journey__item:nth-child(3) .journey__week,
+.journey__item:nth-child(3) .journey__content p {
+  color: var(--color-text-light);
+}
+
+.journey__week {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  margin-bottom: 6px;
+}
+
+.journey__content p {
+  font-size: 0.98rem;
+  color: var(--color-text);
+}
+
 /* Grid & Cards */
 .grid {
   display: grid;
@@ -332,7 +418,7 @@ ul {
 
 .card {
   background-color: var(--color-card-bg);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 36px 24px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
@@ -345,7 +431,7 @@ ul {
 
 .problem-card {
   background-color: var(--color-card-bg);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 32px 28px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
@@ -374,7 +460,7 @@ ul {
 
 .solution-card {
   background-color: var(--color-card-bg);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 32px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
@@ -409,7 +495,7 @@ ul {
 /* Result cards */
 .result-card {
   background-color: var(--color-bg-alt);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 32px;
   display: flex;
   gap: 20px;
@@ -431,7 +517,7 @@ ul {
 /* Review cards */
 .review-card {
   background-color: var(--color-card-bg);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 32px 28px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
@@ -513,6 +599,44 @@ ul {
 .btn--banner:hover {
   background-color: #f0efeb;
   transform: translateY(-2px);
+}
+
+/* Mood photo */
+.mood-photo {
+  height: 280px;
+  overflow: hidden;
+}
+
+.mood-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%;
+}
+
+@media (min-width: 769px) {
+  .mood-photo {
+    height: 420px;
+  }
+}
+
+/* 배경 사진이 있는 섹션 (기대 효과) */
+.section--photo {
+  position: relative;
+  background-image:
+    linear-gradient(180deg, rgba(43, 43, 41, 0.6) 0%, rgba(43, 43, 41, 0.82) 100%),
+    var(--section-bg-image);
+  background-size: cover;
+  background-position: center top;
+  color: #fff;
+}
+
+.section--photo .section__label {
+  color: #cfd9dd;
+}
+
+.section--photo .section__title {
+  color: #fff;
 }
 
 /* Footer */

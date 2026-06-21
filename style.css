@@ -109,7 +109,7 @@ a {
   background-color: var(--color-primary);
   color: #fff !important;
   padding: 8px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   font-weight: 500;
 }
 
@@ -295,7 +295,7 @@ a {
 .btn {
   display: inline-block;
   padding: 16px 38px;
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 1rem;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -322,6 +322,10 @@ a {
 .btn--ghost:hover {
   background-color: rgba(240, 239, 235, 0.1);
   transform: translateY(-2px);
+}
+
+.btn--apply {
+  border-radius: 999px;
 }
 
 /* Sections */
@@ -385,7 +389,7 @@ a {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: var(--radius);
+  border-radius: 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -445,7 +449,7 @@ a {
   display: flex;
   flex-direction: column;
   background-color: var(--color-card-bg);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 36px 32px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -454,6 +458,16 @@ a {
 .program-card:not(.program-card--soon):hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+.program-card__image {
+  display: block;
+  width: calc(100% + 64px);
+  height: 180px;
+  margin: -36px -32px 20px;
+  object-fit: cover;
+  object-position: center 60%;
+  border-radius: 0;
 }
 
 .program-card__badge {
@@ -513,7 +527,7 @@ a {
 /* Review cards */
 .review-card {
   background-color: var(--color-card-bg);
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 32px 28px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
