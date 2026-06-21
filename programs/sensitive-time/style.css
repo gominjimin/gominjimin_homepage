@@ -512,6 +512,7 @@ ul {
 
 .result-card p {
   font-size: 0.98rem;
+  color: var(--color-text);
 }
 
 /* Review cards */

@@ -1,6 +1,6 @@
-1.개요: 고민지민 신경계필라테스 정적사이트(빌드없음)
-2.구조: index.html, programs/, assets
-3.기술: HTML/CSS/JS, 모바일우선반응형(min-width)
-4.흐름: 수정→확인→commit
-5.금기: 초록·브라운·테라코타, 후기원문수정, 데스크탑전용CSS
-6.명령어: open index.html, git commit
+1.개요: 고민지민 신경계필라테스 사이트
+2.구조: index.html, programs/, assets/images
+3.기술: HTML/CSS/JS, 모바일우선
+4.흐름: 서버확인→commit→push
+5.금기: 초록계열,후기원문수정,각진버튼(무료상담만타원),사진배경엔 글자색 지정
+6.명령어: python3 -m http.server, git push
